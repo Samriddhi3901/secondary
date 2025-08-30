@@ -18,29 +18,21 @@
       justify-content: center;
     }
     @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-    nav {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      padding: 20px 0;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(5px);
-      position: fixed;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
+    .collabglow {
       color: #00ffcc;
+      font-family: 'Orbitron', 'Arial', sans-serif;
+      font-size: 3em;
       text-decoration: none;
-      margin: 0 15px;
-      font-size: 1.1em;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
       position: relative;
+      margin-bottom: 30px; /* Increased margin for clearer separation above button */
+      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00aaff;
     }
-    nav a:hover {
+    .collabglow:hover {
       color: #00ff99;
+      text-shadow: 0 0 15px #00ff99, 0 0 25px #00ff99, 0 0 35px #00aaff;
     }
-    nav a::after {
+    .collabglow::after {
       content: '';
       position: absolute;
       width: 0;
@@ -50,7 +42,7 @@
       background: #00ffcc;
       transition: width 0.3s ease;
     }
-    nav a:hover::after {
+    .collabglow:hover::after {
       width: 100%;
     }
     .button {
@@ -63,20 +55,17 @@
       font-size: 1em;
       text-transform: uppercase;
       letter-spacing: 1px;
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 5px rgba(0, 255, 204, 0.5); }
-      50% { box-shadow: 0 0 20px rgba(0, 255, 204, 0.8); }
-      100% { box-shadow: 0 0 5px rgba(0, 255, 204, 0.5); }
+      box-shadow: 0 0 15px #00ffcc, 0 0 25px #00aaff;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+      animation: none;
     }
     .button:hover {
       background: linear-gradient(45deg, #00aaff, #00ffcc);
+      box-shadow: 0 0 20px #00ffcc, 0 0 30px #00aaff;
     }
     .content {
       text-align: center;
-      padding-top: 80px;
+      padding: 10px; /* Reduced padding to adjust for increased margin */
       animation: fadeIn 1s ease-in;
     }
     @keyframes fadeIn {
@@ -139,10 +128,9 @@
   </style>
 </head>
 <body>
-  <nav>
-    CollabGlow
-  </nav>
   <div class="content">
+    <br><span class="collabglow">CollabGlow</span></br>
+    <br></br>
     <button class="button">See What's New | AI Diagram</button>
     <h1>Documents & diagrams<br>for engineering teams.</h1>
     <p>All-in-one markdown editor, collaborative canvas, and<br>diagram-as-code builder</p>
